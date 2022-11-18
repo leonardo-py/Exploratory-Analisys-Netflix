@@ -135,3 +135,8 @@ base['Viewership Score'].hist()
 
 Após tratar, conhecer e análiser uma base de dados, tomamos ciência das principais características da mesma, encontrando padrões ou informações relevantes pouco exploradas pelo negócio em questão com potencial de agregar valor a um projeto. 
 
+<br /> <br /> <br /> <br /> 
+Se conecte comigo no linkedin: https://www.linkedin.com/in/leonardoandradedasilva/
+
+E-mail: leonardo.andrade.work@gmail.com
+
