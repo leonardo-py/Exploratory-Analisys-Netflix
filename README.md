@@ -2,7 +2,9 @@
 
 Esta análise tem como objetivo inicial documentar o processo de AED, assim como conhecer a base de dados que estamos trabalhando, tratar e gerar vizualizações que facilitem a compreenção dos dados os quais estamos utilizando.
 
-Informações Iniciais sobre o dataset: Trata-se de uma base de dados com informações dos conteúdos da Netflix que frequentaram o Top 10 em determinado período, iremos conhecer e colher mais informações ao longo do processo.
+Informações Iniciais sobre o dataset: Trata-se de uma base de dados com informações dos conteúdos da Netflix que frequentaram o Top 10 nos Estados Unidos em determinado período, iremos conhecer e colher mais informações ao longo do processo.
+
+dataset retirado do Kaggle: <https://www.kaggle.com/datasets/prasertk/netflix-daily-top-10-in-us>
 
 
 Vamos começar importando a base de dados com a biblioteca Pandas, que será utilizada ao longo de toda análise.
@@ -63,6 +65,12 @@ print(fim)
 
 Temos agora a informação que nossa base se inicia em Abril de 2020 até Março de 2022
 
+Através da coluna de títulos podemos contar quantos conteúdos distintos estão presentes na base. Um total de 645 títulos
+```
+len(base['Title'].unique())
+```
+![645](https://user-images.githubusercontent.com/68862907/202781637-186f7454-85dd-429a-b2e7-2d096e4af71f.PNG)
+
 A partir de agora daremos um breve tratamento estatístico para a base com intenção de conhece-la ainda mais. Para isso utilizaremos o método describe, que nos da uma série de informações sobre o dataset trabalhado.
 ```
 base.describe()
@@ -92,9 +100,25 @@ base.Title.value_counts()
 
 Temos então uma resposta que pode soar inesperada paga alguns, o desenho infantil Cocomelon figura no Top 10 por muito mais tempo que os demais conteúdos durante o período de tempo em que a base nos fornece os dados.
 
-Criaremos agora uma tabela mostrando os títulos que por mais tempo figuraram no Top 10. Para isso a base foi agrupada por título, feito o somatório das colunas que dispostas em ordem decrescente para termos o rankeamento.
+Criaremos agora uma tabela mostrando os títulos que por mais tempo figuraram no Top 10. Para isso a base foi agrupada por título, feito o somatório das colunas que dispostas em ordem decrescente para termos o rankeamento, sendo a coluna escolhida para ordenar a base 'Days In Top 10'.
 ```
 top_base = base.groupby(['Title']).sum().sort_values(by = 'Days In Top 10', ascending=False).head(10)
 top_base
 ```
 ![top10](https://user-images.githubusercontent.com/68862907/202769213-3ba97608-09b0-4674-9100-4bbb45c568ec.PNG)
+
+A partir de agora serão gerados gráficos que também fazem parte da biblioteca do Pandas para seguirmos analisando a base.
+
+Primeiro um gráfico de barra dos Top 10 Títulos da base, com Cocomelon liderando com folga
+```
+base.Title.value_counts().head(10).plot(kind = 'bar', xlabel ='Títulos', ylabel = 'Contagem de valores')
+```
+![contagem_barra](https://user-images.githubusercontent.com/68862907/202774423-eb4006b9-f7f5-430e-9075-a5561033a14d.PNG)
+
+Agora outro gráfico de barra com contagem de valores, porém por tipo de conteúdo
+```
+base.Type.value_counts().plot(kind='bar', xlabel = 'Tipo', ylabel = 'Contagem de Valores')
+```
+![tipo_barra](https://user-images.githubusercontent.com/68862907/202775213-2f7e3a7e-6ec8-46de-ab56-e2e7e0ab1adc.PNG)
+
+Podemos perceber que as séries (TV Show) estiveram bem mais presente no Top 10 do que os Filmes (Movie), além disso os outros dois tipos de conteúdo pouco figuraram no Top 10 (Stand Up-Commedy e concertor musicais)
