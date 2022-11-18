@@ -6,6 +6,8 @@ Informações Iniciais sobre o dataset: Trata-se de uma base de dados com inform
 
 dataset retirado do Kaggle: <https://www.kaggle.com/datasets/prasertk/netflix-daily-top-10-in-us>
 
+a linguagem de programação utilizada é Python e a IDE emprega é o Jupyter Notebook
+
 
 Vamos começar importando a base de dados com a biblioteca Pandas, que será utilizada ao longo de toda análise.
 
