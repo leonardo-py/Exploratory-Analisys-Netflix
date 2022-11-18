@@ -121,4 +121,17 @@ base.Type.value_counts().plot(kind='bar', xlabel = 'Tipo', ylabel = 'Contagem de
 ```
 ![tipo_barra](https://user-images.githubusercontent.com/68862907/202775213-2f7e3a7e-6ec8-46de-ab56-e2e7e0ab1adc.PNG)
 
-Podemos perceber que as séries (TV Show) estiveram bem mais presente no Top 10 do que os Filmes (Movie), além disso os outros dois tipos de conteúdo pouco figuraram no Top 10 (Stand Up-Commedy e concertor musicais)
+Podemos perceber que as séries (TV Show) estiveram bem mais presente no Top 10 do que os Filmes (Movie), além disso os outros dois tipos de conteúdo pouco figuraram no Top 10 (Stand Up-Commedy e concertor musicais).
+
+Abaixo temos um histograma da Coluna 'Viewership Score', onde podemos observar que a maior parte das ocorrências possuem um Score menor que 200, pois a grande maioria dos conteúdos não permanecem no Top 10 por muito tempo, naturalmente novos títulos vem e tomam esse lugar.
+
+```
+base['Viewership Score'].hist()
+```
+![histograma](https://user-images.githubusercontent.com/68862907/202789648-669e8ac9-79b8-4650-b485-0b6d214e3008.PNG)
+
+
+### Considerações Finais
+
+Após tratar, conhecer e análiser uma base de dados, tomamos ciência das principais características da mesma, encontrando padrões ou informações relevantes pouco exploradas pelo negócio em questão com potencial de agregar valor a um projeto. 
+
