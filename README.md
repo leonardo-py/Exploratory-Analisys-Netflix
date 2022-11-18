@@ -1,14 +1,17 @@
 # Análise Exploratória de Dados da Netflix 
 
+### Introdução
 Esta análise tem como objetivo inicial documentar o processo de AED, assim como conhecer a base de dados que estamos trabalhando, tratar e gerar vizualizações que facilitem a compreenção dos dados os quais estamos utilizando.
 
 Informações Iniciais sobre o dataset: Trata-se de uma base de dados com informações dos conteúdos da Netflix que frequentaram o Top 10 nos Estados Unidos em determinado período, iremos conhecer e colher mais informações ao longo do processo.
 
 dataset retirado do Kaggle: <https://www.kaggle.com/datasets/prasertk/netflix-daily-top-10-in-us>
 
-a linguagem de programação utilizada é Python e a IDE emprega é o Jupyter Notebook
-
-
+A linguagem de programação utilizada é Python e a IDE emprega é o Jupyter Notebook
+<br /> 
+<br />
+<br />
+### Mãos à obra
 Vamos começar importando a base de dados com a biblioteca Pandas, que será utilizada ao longo de toda análise.
 
 ```
